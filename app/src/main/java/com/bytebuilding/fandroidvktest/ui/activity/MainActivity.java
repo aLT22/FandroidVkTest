@@ -1,4 +1,4 @@
-package com.bytebuilding.fandroidvktest;
+package com.bytebuilding.fandroidvktest.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.widget.Toast;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
+import com.bytebuilding.fandroidvktest.CurrentUser;
+import com.bytebuilding.fandroidvktest.R;
 import com.bytebuilding.fandroidvktest.mvp.presenter.MainPresenter;
 import com.bytebuilding.fandroidvktest.mvp.view.MainView;
 import com.bytebuilding.fandroidvktest.utils.constant.ApiConstants;
@@ -15,7 +17,7 @@ import com.vk.sdk.VKCallback;
 import com.vk.sdk.VKSdk;
 import com.vk.sdk.api.VKError;
 
-public class MainActivity extends MvpAppCompatActivity implements MainView {
+public class MainActivity extends BaseActivity implements MainView {
 
     public static final String TAG = MainActivity.class.getSimpleName();
 
