@@ -8,6 +8,8 @@ public class ApiConstants {
 
     public static final String[] DEFAULT_LOGIN_SCOPES = {};
 
+    public static final String VK_BASE_URL = "https://api.vk.com/method/";
+
     private ApiConstants() {}
 
 }

@@ -2,6 +2,7 @@ package com.bytebuilding.fandroidvktest.di.component;
 
 import com.bytebuilding.fandroidvktest.di.module.ApplicationModule;
 import com.bytebuilding.fandroidvktest.di.module.ManagerModule;
+import com.bytebuilding.fandroidvktest.di.module.RestModule;
 import com.bytebuilding.fandroidvktest.ui.activity.BaseActivity;
 
 import javax.inject.Singleton;
@@ -13,7 +14,7 @@ import dagger.Component;
  */
 
 @Singleton
-@Component(modules = {ApplicationModule.class, ManagerModule.class})
+@Component(modules = {ApplicationModule.class, ManagerModule.class, RestModule.class})
 public interface AppComponent {
 
     //Activity inject
