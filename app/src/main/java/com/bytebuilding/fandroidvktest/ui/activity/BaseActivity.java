@@ -9,6 +9,9 @@ import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.bytebuilding.fandroidvktest.R;
 import com.bytebuilding.fandroidvktest.common.manager.MyFragmentManager;
 import com.bytebuilding.fandroidvktest.ui.fragment.BaseFragment;
+import com.bytebuilding.fandroidvktest.utils.App;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,6 +33,7 @@ public abstract class BaseActivity extends MvpAppCompatActivity {
 
     Unbinder unbinder = null;
 
+    @Inject
     MyFragmentManager mFragmentManager;
 
     @Override
@@ -37,7 +41,7 @@ public abstract class BaseActivity extends MvpAppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
 
-        mFragmentManager = new MyFragmentManager();
+        App.getsAppComponent().inject(this);
 
         unbinder = ButterKnife.bind(this);
 

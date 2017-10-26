@@ -12,6 +12,7 @@ import com.bytebuilding.fandroidvktest.R;
 import com.bytebuilding.fandroidvktest.mvp.presenter.MainPresenter;
 import com.bytebuilding.fandroidvktest.mvp.view.MainView;
 import com.bytebuilding.fandroidvktest.ui.fragment.NewsFeedFragment;
+import com.bytebuilding.fandroidvktest.utils.App;
 import com.bytebuilding.fandroidvktest.utils.constant.ApiConstants;
 import com.vk.sdk.VKAccessToken;
 import com.vk.sdk.VKCallback;
@@ -28,6 +29,8 @@ public class MainActivity extends BaseActivity implements MainView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        App.getsAppComponent().inject(this);
 
         mMainPresenter.checkAuth();
     }
