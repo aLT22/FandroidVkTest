@@ -1,6 +1,6 @@
 package com.bytebuilding.fandroidvktest.rest;
 
-import com.bytebuilding.fandroidvktest.utils.constant.ApiConstants;
+import com.bytebuilding.fandroidvktest.utils.constant.AppConstants;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -16,7 +16,7 @@ public class RestClient {
     public RestClient() {
         mRetrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(ApiConstants.VK_BASE_URL)
+                .baseUrl(AppConstants.VK_BASE_URL)
                 .build();
     }
 
