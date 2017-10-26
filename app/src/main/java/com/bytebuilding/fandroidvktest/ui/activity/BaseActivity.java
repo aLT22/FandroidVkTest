@@ -43,22 +43,28 @@ public abstract class BaseActivity extends MvpAppCompatActivity {
 
         setSupportActionBar(mToolbar);
 
-        getLayoutInflater().inflate(getMainContentLayout(), mWrapper);
+        getLayoutInflater().inflate(getMainContentLayoutRes(), mWrapper);
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
+    protected void onDestroy() {
+        super.onDestroy();
 
         unbinder.unbind();
     }
 
     @LayoutRes
-    protected abstract int getMainContentLayout();
+    protected abstract int getMainContentLayoutRes();
 
     //This method will be change toolbar header text and fab visibility
     public void fragmentOnScreen(BaseFragment fragment) {
+        setToolbarTitle(fragment.createToolbarTitle(this));
+    }
 
+    public void setToolbarTitle(String title) {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(title);
+        }
     }
 
     public void setFragment(BaseFragment fragment) {

@@ -11,6 +11,7 @@ import com.bytebuilding.fandroidvktest.CurrentUser;
 import com.bytebuilding.fandroidvktest.R;
 import com.bytebuilding.fandroidvktest.mvp.presenter.MainPresenter;
 import com.bytebuilding.fandroidvktest.mvp.view.MainView;
+import com.bytebuilding.fandroidvktest.ui.fragment.NewsFeedFragment;
 import com.bytebuilding.fandroidvktest.utils.constant.ApiConstants;
 import com.vk.sdk.VKAccessToken;
 import com.vk.sdk.VKCallback;
@@ -32,7 +33,7 @@ public class MainActivity extends BaseActivity implements MainView {
     }
 
     @Override
-    protected int getMainContentLayout() {
+    protected int getMainContentLayoutRes() {
         return R.layout.activity_main;
     }
 
@@ -62,6 +63,7 @@ public class MainActivity extends BaseActivity implements MainView {
     @Override
     public void signedIn() {
         Toast.makeText(this, "Current user id: " + CurrentUser.getId(), Toast.LENGTH_SHORT).show();
+        setFragment(NewsFeedFragment.newInstance());
         Log.e(TAG, "signedIn: " + CurrentUser.getId());
     }
 }

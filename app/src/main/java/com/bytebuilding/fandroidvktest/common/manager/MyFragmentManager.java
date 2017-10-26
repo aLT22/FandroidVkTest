@@ -44,6 +44,8 @@ public class MyFragmentManager {
 
             mBackStack.add(fragment);
         }
+
+        commitTransaction(activity, transaction);
     }
 
     private void commitTransaction(BaseActivity activity, FragmentTransaction transaction) {
@@ -68,7 +70,7 @@ public class MyFragmentManager {
                 && !activity.isFinishing()
                 && !isAlreadyContains(fragment)) {
             FragmentTransaction transaction = createAddTransaction(activity, fragment, false);
-            transaction.replace(containerId, fragment);
+            transaction.add(containerId, fragment);
             commitAddTransaction(activity, fragment, transaction, false);
         }
     }
